@@ -1,9 +1,8 @@
 name: Publish to GitHub Packages
 
 on:
-    push:
-      branches:
-        - main
+  release:
+    types: [created]
 
 jobs:
   deploy:
@@ -23,4 +22,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         python setup.py sdist bdist_wheel
-        twine upload dist/* -u __token__ -p ${{ secrets.GITHUB_TOKEN }}
+        pip install twine
+        twine upload --repository-url https://maven.pkg.github.com/${{ github.repository }} dist/*

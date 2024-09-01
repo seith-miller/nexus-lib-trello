@@ -13,6 +13,9 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/seith-miller/nexus-lib-trello",
+    project_urls={
+        "GitHub Packages": "https://github.com/seith-miller/nexus-lib-trello/packages",
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
